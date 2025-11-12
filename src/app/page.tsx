@@ -1,7 +1,9 @@
 'use client'
 
-import { useState, useRef } from 'react'
-import { Plus, Minus, Target, Utensils, Dumbbell, Timer, Play, Crown, Star, Zap, Camera, Upload, Loader2, X, Search, ChevronLeft, ChevronRight, Settings, Moon, Sun, TrendingUp, Waves, Bike, Footprints, Activity, Heart, Baby, Users, Accessibility, Trophy, MessageCircle, Send, Calendar, Bell, Globe, Volume2, VolumeX, Pill } from 'lucide-react'
+import { useState, useRef, useEffect } from 'react'
+import { useRouter } from 'next/navigation'
+import { Plus, Minus, Target, Utensils, Dumbbell, Timer, Play, Crown, Star, Zap, Camera, Upload, Loader2, X, Search, ChevronLeft, ChevronRight, Settings, Moon, Sun, TrendingUp, Waves, Bike, Footprints, Activity, Heart, Baby, Users, Accessibility, Trophy, MessageCircle, Send, Calendar, Bell, Globe, Volume2, VolumeX, Pill, LogOut } from 'lucide-react'
+import { useAuth } from '@/hooks/useAuth'
 
 interface NutritionalInfo {
   calories: number
@@ -97,6 +99,8 @@ interface WeeklyWorkout {
 }
 
 export default function FitTrackProApp() {
+  const router = useRouter()
+  const { user, loading: authLoading, signOut } = useAuth()
   const [activeTab, setActiveTab] = useState('counter')
   const [selectedPlan, setSelectedPlan] = useState('basic')
   const [dailyCalories, setDailyCalories] = useState(1800)
@@ -139,6 +143,222 @@ export default function FitTrackProApp() {
   ])
   const [chatInput, setChatInput] = useState('')
   const fileInputRef = useRef<HTMLInputElement>(null)
+
+  // Redirecionar para login se não autenticado
+  useEffect(() => {
+    if (!authLoading && !user) {
+      router.push('/auth')
+    }
+  }, [user, authLoading, router])
+
+  // Mostrar loading enquanto verifica autenticação
+  if (authLoading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 flex items-center justify-center">
+        <div className="text-center">
+          <Loader2 className="w-12 h-12 animate-spin text-blue-500 mx-auto mb-4" />
+          <p className="text-gray-600">Carregando...</p>
+        </div>
+      </div>
+    )
+  }
+
+  // Não renderizar se não autenticado
+  if (!user) {
+    return null
+  }
+
+  // Redirecionar para login se não autenticado
+  useEffect(() => {
+    if (!authLoading && !user) {
+      router.push('/auth')
+    }
+  }, [user, authLoading, router])
+
+  // Mostrar loading enquanto verifica autenticação
+  if (authLoading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 flex items-center justify-center">
+        <div className="text-center">
+          <Loader2 className="w-12 h-12 animate-spin text-blue-500 mx-auto mb-4" />
+          <p className="text-gray-600">Carregando...</p>
+        </div>
+      </div>
+    )
+  }
+
+  // Não renderizar se não autenticado
+  if (!user) {
+    return null
+  }
+
+  // Redirecionar para login se não autenticado
+  useEffect(() => {
+    if (!authLoading && !user) {
+      router.push('/auth')
+    }
+  }, [user, authLoading, router])
+
+  // Mostrar loading enquanto verifica autenticação
+  if (authLoading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 flex items-center justify-center">
+        <div className="text-center">
+          <Loader2 className="w-12 h-12 animate-spin text-blue-500 mx-auto mb-4" />
+          <p className="text-gray-600">Carregando...</p>
+        </div>
+      </div>
+    )
+  }
+
+  // Não renderizar se não autenticado
+  if (!user) {
+    return null
+  }
+
+  // Redirecionar para login se não autenticado
+  useEffect(() => {
+    if (!authLoading && !user) {
+      router.push('/auth')
+    }
+  }, [user, authLoading, router])
+
+  // Mostrar loading enquanto verifica autenticação
+  if (authLoading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 flex items-center justify-center">
+        <div className="text-center">
+          <Loader2 className="w-12 h-12 animate-spin text-blue-500 mx-auto mb-4" />
+          <p className="text-gray-600">Carregando...</p>
+        </div>
+      </div>
+    )
+  }
+
+  // Não renderizar se não autenticado
+  if (!user) {
+    return null
+  }
+
+  // Redirecionar para login se não autenticado
+  useEffect(() => {
+    if (!authLoading && !user) {
+      router.push('/auth')
+    }
+  }, [user, authLoading, router])
+
+  // Mostrar loading enquanto verifica autenticação
+  if (authLoading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 flex items-center justify-center">
+        <div className="text-center">
+          <Loader2 className="w-12 h-12 animate-spin text-blue-500 mx-auto mb-4" />
+          <p className="text-gray-600">Carregando...</p>
+        </div>
+      </div>
+    )
+  }
+
+  // Não renderizar se não autenticado
+  if (!user) {
+    return null
+  }
+
+  // Redirecionar para login se não autenticado
+  useEffect(() => {
+    if (!authLoading && !user) {
+      router.push('/auth')
+    }
+  }, [user, authLoading, router])
+
+  // Mostrar loading enquanto verifica autenticação
+  if (authLoading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 flex items-center justify-center">
+        <div className="text-center">
+          <Loader2 className="w-12 h-12 animate-spin text-blue-500 mx-auto mb-4" />
+          <p className="text-gray-600">Carregando...</p>
+        </div>
+      </div>
+    )
+  }
+
+  // Não renderizar se não autenticado
+  if (!user) {
+    return null
+  }
+
+  // Redirecionar para login se não autenticado
+  useEffect(() => {
+    if (!authLoading && !user) {
+      router.push('/auth')
+    }
+  }, [user, authLoading, router])
+
+  // Mostrar loading enquanto verifica autenticação
+  if (authLoading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 flex items-center justify-center">
+        <div className="text-center">
+          <Loader2 className="w-12 h-12 animate-spin text-blue-500 mx-auto mb-4" />
+          <p className="text-gray-600">Carregando...</p>
+        </div>
+      </div>
+    )
+  }
+
+  // Não renderizar se não autenticado
+  if (!user) {
+    return null
+  }
+
+  // Redirecionar para login se não autenticado
+  useEffect(() => {
+    if (!authLoading && !user) {
+      router.push('/auth')
+    }
+  }, [user, authLoading, router])
+
+  // Mostrar loading enquanto verifica autenticação
+  if (authLoading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 flex items-center justify-center">
+        <div className="text-center">
+          <Loader2 className="w-12 h-12 animate-spin text-blue-500 mx-auto mb-4" />
+          <p className="text-gray-600">Carregando...</p>
+        </div>
+      </div>
+    )
+  }
+
+  // Não renderizar se não autenticado
+  if (!user) {
+    return null
+  }
+
+  // Redirecionar para login se não autenticado
+  useEffect(() => {
+    if (!authLoading && !user) {
+      router.push('/auth')
+    }
+  }, [user, authLoading, router])
+
+  // Mostrar loading enquanto verifica autenticação
+  if (authLoading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 flex items-center justify-center">
+        <div className="text-center">
+          <Loader2 className="w-12 h-12 animate-spin text-blue-500 mx-auto mb-4" />
+          <p className="text-gray-600">Carregando...</p>
+        </div>
+      </div>
+    )
+  }
+
+  // Não renderizar se não autenticado
+  if (!user) {
+    return null
+  }
 
   // Dados de refeições mundiais
   const worldMeals: Recipe[] = [
@@ -697,31 +917,46 @@ export default function FitTrackProApp() {
     setShowAnalysisModal(true)
     
     try {
-      await new Promise(resolve => setTimeout(resolve, 3000))
-      
-      const mockAnalysis: FoodAnalysis = {
-        foodName: "Prato de Salmão Grelhado com Vegetais",
-        confidence: 92,
-        portion: "1 porção média (250g)",
-        nutritionalInfo: {
-          calories: 385,
-          protein: 32.5,
-          carbs: 18.2,
-          fat: 22.1,
-          fiber: 4.8,
-          sugar: 8.3,
-          sodium: 420,
-          calcium: 85,
-          iron: 2.1,
-          vitaminC: 45,
-          vitaminA: 180,
-          potassium: 650
-        }
+      const response = await fetch('/api/analyze-food', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ imageUrl }),
+      })
+
+      if (!response.ok) {
+        const errorData = await response.json()
+        throw new Error(errorData.error || 'Erro ao analisar imagem')
       }
-      
-      setAnalysisResult(mockAnalysis)
+
+      const analysis: FoodAnalysis = await response.json()
+      setAnalysisResult(analysis)
     } catch (error) {
       console.error('Erro na análise:', error)
+      
+      // Fallback para análise mockada em caso de erro
+      const mockAnalysis: FoodAnalysis = {
+        foodName: "Alimento não identificado",
+        confidence: 0,
+        portion: "Porção estimada",
+        nutritionalInfo: {
+          calories: 0,
+          protein: 0,
+          carbs: 0,
+          fat: 0,
+          fiber: 0,
+          sugar: 0,
+          sodium: 0,
+          calcium: 0,
+          iron: 0,
+          vitaminC: 0,
+          vitaminA: 0,
+          potassium: 0
+        }
+      }
+      setAnalysisResult(mockAnalysis)
+      alert('Erro ao analisar imagem. Por favor, tente novamente.')
     } finally {
       setIsAnalyzing(false)
     }
@@ -1075,6 +1310,12 @@ export default function FitTrackProApp() {
                   <h4 className={`font-semibold ${darkMode ? 'text-white' : 'text-gray-800'} mb-4`}>Informações da Conta</h4>
                   <div className="space-y-3">
                     <div className="flex justify-between">
+                      <span className={darkMode ? 'text-gray-400' : 'text-gray-600'}>Email:</span>
+                      <span className={`font-medium ${darkMode ? 'text-white' : 'text-gray-800'}`}>
+                        {user?.email}
+                      </span>
+                    </div>
+                    <div className="flex justify-between">
                       <span className={darkMode ? 'text-gray-400' : 'text-gray-600'}>Plano Atual:</span>
                       <span className={`font-medium ${darkMode ? 'text-white' : 'text-gray-800'}`}>
                         {plans.find(p => p.id === selectedPlan)?.name}
@@ -1085,6 +1326,17 @@ export default function FitTrackProApp() {
                       <span className={`font-medium ${darkMode ? 'text-white' : 'text-gray-800'}`}>{dailyCalories} kcal</span>
                     </div>
                   </div>
+                </div>
+
+                {/* Sair da Sessão */}
+                <div className={`${darkMode ? 'bg-gray-700' : 'bg-gray-50'} rounded-2xl p-6`}>
+                  <button
+                    onClick={signOut}
+                    className="w-full flex items-center justify-center space-x-2 px-6 py-3 bg-red-500 hover:bg-red-600 text-white rounded-xl font-medium transition-colors"
+                  >
+                    <LogOut className="w-5 h-5" />
+                    <span>Sair da Sessão</span>
+                  </button>
                 </div>
               </div>
             </div>
